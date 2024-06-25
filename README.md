@@ -24,3 +24,17 @@ df['Frecuencia Acumulada'] = calcular_frecuencia_acumulada(df['Frecuencia Absolu
 
 # Imprimir el DataFrame
 print(df.to_string(index=False))
+
+import matplotlib.pyplot as plt
+
+# Colores 
+colors = ['skyblue', 'salmon', 'lightgreen', 'orange', 'lightcoral', 'lightblue', 'gold', 'violet', 'lightpink', 'lightgrey', 'cyan']
+
+# Crear el gráfica de barras
+plt.figure(figsize=(10, 6))
+plt.barh(df['Clase'], df['Frecuencia Absoluta'], color=colors)
+plt.xlabel('Frecuencia Absoluta')
+plt.ylabel('Clase')
+plt.title('Gráfica de barras')
+plt.grid(axis='x', linestyle='--', alpha=0.6)
+plt.show()
